@@ -57,9 +57,11 @@ autocmd BufRead *.py set expandtab
 
 
 "" the key mapping for *.c
-autocmd BufRead *.c imap if<tab> if( ){<CR>}<esc>bba
+autocmd BufRead *.c imap if<tab> if( )<esc>ba
+autocmd BufRead *.c imap iff<tab> if( ){<CR>}<esc>bba
 autocmd BufRead *.c imap else<tab> else( ){<CR>}<esc>bba
-autocmd BufRead *.c imap while<tab> while( ){<CR>}<esc>bba
+autocmd BufRead *.c imap whi<tab> while( )<esc>ba
+autocmd BufRead *.c imap whii<tab> while( ){<CR>}<esc>bba
 autocmd BufRead *.c imap for<tab> for( ; ; ){<CR>}<esc>bbbba
 autocmd BufRead *.c imap ic<tab> #include<><esc>ha
 autocmd BufRead *.c imap icc<tab> #include""<esc>ha
@@ -75,8 +77,10 @@ autocmd BufRead *.c imap dpf<tab> DEBUGPRINTF("\n");<esc>hhhhi
 
 " the key mapping for *.cpp
 autocmd BufRead *.cpp imap if<tab> if( ){<CR>}<esc>bba
+autocmd BufRead *.cpp imap iff<tab> if( )<esc>ba
 autocmd BufRead *.cpp imap else<tab> else( ){<CR>}<esc>bbba
-autocmd BufRead *.cpp imap while<tab> while( ){<CR>}<esc>bba
+autocmd BufRead *.cpp imap whi<tab> while( )<esc>ba
+autocmd BufRead *.cpp imap whii<tab> while( ){<CR>}<esc>bba
 autocmd BufRead *.cpp imap for<tab> for( ; ; ){<CR>}<esc>bbbbba
 autocmd BufRead *.cpp imap ic<tab> #include<><esc>ha
 autocmd BufRead *.cpp imap icc<tab> #include""<esc>ha
@@ -106,6 +110,13 @@ autocmd BufRead *.h imap #ifn<tab> #ifndef _<CR>#define _<CR><CR>#endif<esc>kkA
 " the key mapping for *.py
 autocmd BufRead *.lua imap fun<tab> function ( )<CR>end<CR><esc>bbbi
 autocmd BufRead,BufNewFile *.ngc set filetype=ngc
+
+" the key mapping for *.java
+autocmd BufRead *.java imap sy<tab> System.
+autocmd BufRead *.java imap pu<tab> public 
+autocmd BufRead *.java imap st<tab> static 
+autocmd BufRead *.java imap pl<tab> System.out.println("");<esc>hhi
+autocmd BufRead *.java imap pr<tab> System.out.print("");<esc>hhi
 
 
 " 使用zc,zo來打開指定處的fold
