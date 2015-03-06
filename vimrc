@@ -22,7 +22,7 @@ endif
 
 
 " 此為mavVim的設定
-colorscheme darkZ
+"colorscheme darkZ
 "colorscheme Tomorrow-Night-Eighties 
 set gfn=Monaco:h14
 set nu
