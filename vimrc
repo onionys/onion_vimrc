@@ -74,6 +74,7 @@ autocmd BufRead *.c imap #ifn<tab> #ifndef _<CR>#define _<CR><CR>#endif<esc>kkA
 autocmd BufRead *.c imap re<tab> return ;<esc>i
 autocmd BufRead *.c imap fdebug<tab> #define _DEBUG_ <CR>#ifdef _DEBUG_ <CR><tab>#define DEBUGPRINTF(x) fprintf(stderr,"[%s] %d : %s", __FUNCTION__ , __LINE__, x) <CR>#else <CR><tab>#define DEBUGPRINTF(x) <CR>#endif
 autocmd BufRead *.c imap dpf<tab> DEBUGPRINTF("\n");<esc>hhhhi
+autocmd BufRead *.c imap {}<tab> <CR>{<CR>}<esc>ko
 
 " the key mapping for *.cpp
 autocmd BufRead *.cpp imap if<tab> if( ){<CR>}<esc>bba
@@ -93,6 +94,7 @@ autocmd BufRead *.cpp imap fmain<tab> int main(int argc, char *argv[]){<CR><CR>r
 autocmd BufRead *.cpp imap fdebug<tab> #define _DEBUG_ <CR>#ifdef _DEBUG_ <CR><tab>#define DPRINTF printf <CR>#else <CR><tab>#define DEBUGPRINTF(x) <CR>#endif
 autocmd BufRead *.cpp imap dpf<tab> DPRINTF("\n");<esc>hhhhi
 autocmd BufRead *.cpp imap pf<tab> printf("");<esc>hhi
+autocmd BufRead *.cpp imap {}<tab> <CR>{<CR>}<esc>ko
 
 " the key mapping for *.h
 autocmd BufRead *.h imap if<tab> if( ){<CR>}<esc>bbba
@@ -105,6 +107,7 @@ autocmd BufRead *.h imap def<tab> #define
 autocmd BufRead *.h imap #ifd<tab> #ifdef DEBUG<CR>#endif<esc>ko
 autocmd BufRead *.h imap stru<tab> struct _ {<CR>} _;<esc>kwa
 autocmd BufRead *.h imap #ifn<tab> #ifndef _<CR>#define _<CR><CR>#endif<esc>kkA
+autocmd BufRead *.h imap {}<tab> <CR>{<CR>}<esc>ko
 
 
 " the key mapping for *.py
@@ -117,6 +120,9 @@ autocmd BufRead *.java imap pu<tab> public
 autocmd BufRead *.java imap st<tab> static 
 autocmd BufRead *.java imap pl<tab> System.out.println("");<esc>hhi
 autocmd BufRead *.java imap pr<tab> System.out.print("");<esc>hhi
+autocmd BufRead *.java imap {}<tab> <CR>{<CR>}<esc>ko
+autocmd BufRead *.java imap str<tab> String 
+
 
 
 " 使用zc,zo來打開指定處的fold
