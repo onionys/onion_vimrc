@@ -14,3 +14,10 @@ apt-get install gcc-4.8 automake
 
 ## tools
 apt-get install subversion 
+
+
+
+#### cp gvimrc and vimrc
+cp ./vimrc ~/.vimrc
+cp ./gvimrc ~/.gvimrc
+
