@@ -45,6 +45,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set background=dark
 set nu
+set hlsearch
 
 " the key mapping for *.py
 autocmd BufRead *.py set smartindent
