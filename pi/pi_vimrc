@@ -40,9 +40,9 @@ nmap <c-l> <C-w><C-l>
 
 " the key mapping for *.py
 autocmd BufRead *.py imap `( ()<esc>ba
-autocmd BufRead *.py imap #utf8 #-*- coding:utf-8 -*-<CR>
-autocmd BufRead *.py imap #py32 #!/usr/bin/env python2.7-32<CR>
-autocmd BufRead *.py imap #py #!/usr/bin/env python<CR>
+autocmd BufRead *.py imap #!u<tab> #-*- coding:utf-8 -*-<CR>
+autocmd BufRead *.py imap #!p<tab> #!/usr/bin/env python3<CR><CR>if __name__ == "__main__":<CR>pass<CR>
+
 autocmd BufRead *.py set smartindent
 autocmd BufRead *.py set tabstop=4
 autocmd BufRead *.py set shiftwidth=4
