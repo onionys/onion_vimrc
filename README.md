@@ -1,4 +1,4 @@
-# Command Mode
+# Normal Mode
 
 進入 insert mode。`i`: 當前位置。`a`: 下一個字。`I`: 行首。`A`: 行尾。`o`:新增下一行。`O`:新增上一行。`R`: 取代模式
 
@@ -28,7 +28,33 @@ Undo and Redo: `u` and `<ctrl> + r`
 
 `qa`:開始錄製模式。`q` : 錄製模式下離開錄製棤式。`@a`:執行錄製好的動作
 
-# Last Line Mode
+### 分割視窗
+
+使用 Command Line Mode 分割視窗。`:sp`: 上下分割。 `:vsp` : 左右分割
+
+**在不同的分割視窗移動**
+
+`<ctrl> + w` then `<ctrl> + 上` : 游標移到上面的分割視窗
+
+`<ctrl> + w` then `<ctrl> + j`  : 游標移到上面的分割視窗
+
+其他方向比照辦理。
+
+**視窗大小調整**
+
+`<ctrl> + w` then `<` : 縮小寬度
+
+`<ctrl> + w` then `>` : 增加寬度
+
+`<ctrl> + w` then `+` : 縮小高度
+
+`<ctrl> + w` then `-` : 增加高度
+
+可以在指令前先加數目:
+
+`10` then `<ctrl> + w` then `<`
+
+# Command Line Mode
 
 行範圍指定剪下。`:10,20d`: 將第10行到第20行的內容剪下。
 
@@ -44,13 +70,40 @@ Undo and Redo: `u` and `<ctrl> + r`
 
 `:1,20s/hello/world/g`:指定行數取代(1~20行)
 
-### 環境設定
+### 環境設定 (可寫在 home 目錄底下的 `.vimrc` 之後自動生效)
 
 `:set nu`:顯示行號。`:set nonu`:不顯示行號。`:set hlsearch`:找到的字用高亮度顯示。
 
+自動縮排設定
+
+    :set autoindent
+	:set smartindent
+	:set tabstop=4
+	:set shiftwidth=4
+	:set expandtab
+
+`:set background=dark` : 設定背景為 dark
+
+**Insert Mode Key Mapping Set**
+
+	:imap hello<tab> HelloWorld.
+	:imap dth<tab> dscan th -.2 .2 20 1<CR>
+
+`imap` 表示 Insert Mode Key Mapping，`<tab>`為 Tab 鍵，`<CR>` 為換行，`<esc>`為 ESC 鍵。
+
+寫在 `.vimrc` 裡的話，下面為指定副檔名(`.do`)才會生效的寫法
+
+	autocmd BufRead *.do imap dth<tab> dscan th -.2 .2 20 1<CR>
+
+其他的模式也可以設定 key mapping。
+
+	vmap 為 virual mode
+	cmap 為 command line mode
+	nmap 為 normal mode
+
 # Insert Mode
 
-`<ESC>`:回到Command Mode
+`<ESC>`:回到 Normal Mode
 
 自動拼字。`<ctrl> + n` : 當前檔案內容為 base。`<ctrl> + x` `<ctrl> + f` : 當前資料夾下檔名為 base。
 
